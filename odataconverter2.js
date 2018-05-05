@@ -1,5 +1,16 @@
 const { odata2openapi } = require('odata2openapi');
 
-odata2openapi('https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/$metadata')
+const fs = require('fs');
+
+odata2openapi('https://raw.githubusercontent.com/mjmagin/openAPI-Files/master/sapES5GWSampleBasicMetadata.xml')
   .then(swagger => console.log(JSON.stringify(swagger, null, 2)))
+
   .catch(error => console.error(error))
+
+ // fs.writeFile('swagger.json', JSON.stringify(swagger, null, 2), (err) => {  
+    // throws an error, you could also catch it here
+   // if (err) throw err;
+
+    // success case, the file was saved
+    //console.log('swagger saved!');
+//});

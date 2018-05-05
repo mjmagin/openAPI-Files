@@ -1,0 +1,3365 @@
+{
+  "swagger": "2.0",
+  "host": "raw.githubusercontent.com",
+  "produces": [
+    "application/json"
+  ],
+  "basePath": "/mjmagin/openAPI-Files/master/sapES5GWSampleBasicMetadata.xml",
+  "info": {
+    "title": "OData Service",
+    "version": "0.0.1",
+    "x-odata-version": "1.0"
+  },
+  "paths": {
+    "/BusinessPartnerSet": {
+      "get": {
+        "operationId": "getBusinessPartnerSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of BusinessPartner",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.BusinessPartner"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createBusinessPartner",
+        "parameters": [
+          {
+            "name": "BusinessPartner",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.BusinessPartner"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.BusinessPartner"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/BusinessPartnerSet('{BusinessPartnerID}')": {
+      "get": {
+        "operationId": "getBusinessPartnerById",
+        "parameters": [
+          {
+            "name": "BusinessPartnerID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A BusinessPartner.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.BusinessPartner"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteBusinessPartner",
+        "parameters": [
+          {
+            "name": "BusinessPartnerID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateBusinessPartner",
+        "parameters": [
+          {
+            "name": "BusinessPartnerID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "BusinessPartner",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.BusinessPartner"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A BusinessPartner.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.BusinessPartner"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProductSet": {
+      "get": {
+        "operationId": "getProductSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Product",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.Product"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createProduct",
+        "parameters": [
+          {
+            "name": "Product",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Product"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Product"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ProductSet('{ProductID}')": {
+      "get": {
+        "operationId": "getProductById",
+        "parameters": [
+          {
+            "name": "ProductID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A Product.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Product"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteProduct",
+        "parameters": [
+          {
+            "name": "ProductID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateProduct",
+        "parameters": [
+          {
+            "name": "ProductID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "Product",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Product"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A Product.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Product"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SalesOrderSet": {
+      "get": {
+        "operationId": "getSalesOrderSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of SalesOrder",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrder"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createSalesOrder",
+        "parameters": [
+          {
+            "name": "SalesOrder",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrder"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrder"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SalesOrderSet('{SalesOrderID}')": {
+      "get": {
+        "operationId": "getSalesOrderById",
+        "parameters": [
+          {
+            "name": "SalesOrderID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A SalesOrder.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrder"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteSalesOrder",
+        "parameters": [
+          {
+            "name": "SalesOrderID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateSalesOrder",
+        "parameters": [
+          {
+            "name": "SalesOrderID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "SalesOrder",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrder"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A SalesOrder.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrder"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SalesOrderLineItemSet": {
+      "get": {
+        "operationId": "getSalesOrderLineItemSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of SalesOrderLineItem",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrderLineItem"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createSalesOrderLineItem",
+        "parameters": [
+          {
+            "name": "SalesOrderLineItem",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrderLineItem"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrderLineItem"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/SalesOrderLineItemSet('{SalesOrderID}','{ItemPosition}')": {
+      "get": {
+        "operationId": "getSalesOrderLineItemById",
+        "parameters": [
+          {
+            "name": "SalesOrderID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ItemPosition",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A SalesOrderLineItem.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrderLineItem"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteSalesOrderLineItem",
+        "parameters": [
+          {
+            "name": "SalesOrderID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ItemPosition",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateSalesOrderLineItem",
+        "parameters": [
+          {
+            "name": "SalesOrderID",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "ItemPosition",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "SalesOrderLineItem",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrderLineItem"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A SalesOrderLineItem.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.SalesOrderLineItem"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ContactSet": {
+      "get": {
+        "operationId": "getContactSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of Contact",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.Contact"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createContact",
+        "parameters": [
+          {
+            "name": "Contact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Contact"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Contact"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/ContactSet('{ContactGuid}')": {
+      "get": {
+        "operationId": "getContactById",
+        "parameters": [
+          {
+            "name": "ContactGuid",
+            "required": true,
+            "in": "path",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A Contact.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Contact"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteContact",
+        "parameters": [
+          {
+            "name": "ContactGuid",
+            "required": true,
+            "in": "path",
+            "type": "string",
+            "format": "uuid"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateContact",
+        "parameters": [
+          {
+            "name": "ContactGuid",
+            "required": true,
+            "in": "path",
+            "type": "string",
+            "format": "uuid"
+          },
+          {
+            "name": "Contact",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Contact"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A Contact.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.Contact"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_SexSet": {
+      "get": {
+        "operationId": "getVH_SexSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_Sex",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Sex"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_Sex",
+        "parameters": [
+          {
+            "name": "VH_Sex",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Sex"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Sex"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_SexSet('{Sex}')": {
+      "get": {
+        "operationId": "getVH_SexById",
+        "parameters": [
+          {
+            "name": "Sex",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Sex.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Sex"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_Sex",
+        "parameters": [
+          {
+            "name": "Sex",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_Sex",
+        "parameters": [
+          {
+            "name": "Sex",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_Sex",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Sex"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Sex.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Sex"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_CountrySet": {
+      "get": {
+        "operationId": "getVH_CountrySet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_Country",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Country"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_Country",
+        "parameters": [
+          {
+            "name": "VH_Country",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Country"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Country"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_CountrySet('{Land1}')": {
+      "get": {
+        "operationId": "getVH_CountryById",
+        "parameters": [
+          {
+            "name": "Land1",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Country.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Country"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_Country",
+        "parameters": [
+          {
+            "name": "Land1",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_Country",
+        "parameters": [
+          {
+            "name": "Land1",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_Country",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Country"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Country.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Country"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_AddressTypeSet": {
+      "get": {
+        "operationId": "getVH_AddressTypeSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_AddressType",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_AddressType"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_AddressType",
+        "parameters": [
+          {
+            "name": "VH_AddressType",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_AddressType"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_AddressType"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_AddressTypeSet('{AddressType}')": {
+      "get": {
+        "operationId": "getVH_AddressTypeById",
+        "parameters": [
+          {
+            "name": "AddressType",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_AddressType.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_AddressType"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_AddressType",
+        "parameters": [
+          {
+            "name": "AddressType",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_AddressType",
+        "parameters": [
+          {
+            "name": "AddressType",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_AddressType",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_AddressType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_AddressType.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_AddressType"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_CategorySet": {
+      "get": {
+        "operationId": "getVH_CategorySet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_Category",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Category"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_Category",
+        "parameters": [
+          {
+            "name": "VH_Category",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Category"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Category"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_CategorySet('{Category}')": {
+      "get": {
+        "operationId": "getVH_CategoryById",
+        "parameters": [
+          {
+            "name": "Category",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Category.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Category"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_Category",
+        "parameters": [
+          {
+            "name": "Category",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_Category",
+        "parameters": [
+          {
+            "name": "Category",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_Category",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Category"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Category.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Category"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_CurrencySet": {
+      "get": {
+        "operationId": "getVH_CurrencySet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_Currency",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Currency"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_Currency",
+        "parameters": [
+          {
+            "name": "VH_Currency",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Currency"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Currency"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_CurrencySet('{Waers}')": {
+      "get": {
+        "operationId": "getVH_CurrencyById",
+        "parameters": [
+          {
+            "name": "Waers",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Currency.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Currency"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_Currency",
+        "parameters": [
+          {
+            "name": "Waers",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_Currency",
+        "parameters": [
+          {
+            "name": "Waers",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_Currency",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Currency"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Currency.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Currency"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_UnitQuantitySet": {
+      "get": {
+        "operationId": "getVH_UnitQuantitySet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_UnitQuantity",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitQuantity"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_UnitQuantity",
+        "parameters": [
+          {
+            "name": "VH_UnitQuantity",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitQuantity"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitQuantity"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_UnitQuantitySet('{Msehi}')": {
+      "get": {
+        "operationId": "getVH_UnitQuantityById",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_UnitQuantity.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitQuantity"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_UnitQuantity",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_UnitQuantity",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_UnitQuantity",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitQuantity"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_UnitQuantity.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitQuantity"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_UnitWeightSet": {
+      "get": {
+        "operationId": "getVH_UnitWeightSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_UnitWeight",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitWeight"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_UnitWeight",
+        "parameters": [
+          {
+            "name": "VH_UnitWeight",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitWeight"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitWeight"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_UnitWeightSet('{Msehi}')": {
+      "get": {
+        "operationId": "getVH_UnitWeightById",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_UnitWeight.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitWeight"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_UnitWeight",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_UnitWeight",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_UnitWeight",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitWeight"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_UnitWeight.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitWeight"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_UnitLengthSet": {
+      "get": {
+        "operationId": "getVH_UnitLengthSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_UnitLength",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitLength"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_UnitLength",
+        "parameters": [
+          {
+            "name": "VH_UnitLength",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitLength"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitLength"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_UnitLengthSet('{Msehi}')": {
+      "get": {
+        "operationId": "getVH_UnitLengthById",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_UnitLength.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitLength"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_UnitLength",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_UnitLength",
+        "parameters": [
+          {
+            "name": "Msehi",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_UnitLength",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitLength"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_UnitLength.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_UnitLength"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_ProductTypeCodeSet": {
+      "get": {
+        "operationId": "getVH_ProductTypeCodeSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_ProductTypeCode",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_ProductTypeCode"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_ProductTypeCode",
+        "parameters": [
+          {
+            "name": "VH_ProductTypeCode",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_ProductTypeCode"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_ProductTypeCode"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_ProductTypeCodeSet('{TypeCode}')": {
+      "get": {
+        "operationId": "getVH_ProductTypeCodeById",
+        "parameters": [
+          {
+            "name": "TypeCode",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_ProductTypeCode.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_ProductTypeCode"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_ProductTypeCode",
+        "parameters": [
+          {
+            "name": "TypeCode",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_ProductTypeCode",
+        "parameters": [
+          {
+            "name": "TypeCode",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_ProductTypeCode",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_ProductTypeCode"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_ProductTypeCode.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_ProductTypeCode"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_BPRoleSet": {
+      "get": {
+        "operationId": "getVH_BPRoleSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_BPRole",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_BPRole"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_BPRole",
+        "parameters": [
+          {
+            "name": "VH_BPRole",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_BPRole"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_BPRole"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_BPRoleSet('{BpRole}')": {
+      "get": {
+        "operationId": "getVH_BPRoleById",
+        "parameters": [
+          {
+            "name": "BpRole",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_BPRole.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_BPRole"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_BPRole",
+        "parameters": [
+          {
+            "name": "BpRole",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_BPRole",
+        "parameters": [
+          {
+            "name": "BpRole",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_BPRole",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_BPRole"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_BPRole.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_BPRole"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_LanguageSet": {
+      "get": {
+        "operationId": "getVH_LanguageSet",
+        "parameters": [
+          {
+            "name": "$filter",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$top",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$skip",
+            "type": "integer",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$orderby",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$expand",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          },
+          {
+            "name": "$inlinecount",
+            "type": "string",
+            "required": false,
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of VH_Language",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Language"
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "post": {
+        "operationId": "createVH_Language",
+        "parameters": [
+          {
+            "name": "VH_Language",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Language"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created entity",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Language"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/VH_LanguageSet('{Spras}')": {
+      "get": {
+        "operationId": "getVH_LanguageById",
+        "parameters": [
+          {
+            "name": "Spras",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Language.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Language"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteVH_Language",
+        "parameters": [
+          {
+            "name": "Spras",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateVH_Language",
+        "parameters": [
+          {
+            "name": "Spras",
+            "required": true,
+            "in": "path",
+            "type": "string"
+          },
+          {
+            "name": "VH_Language",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Language"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A VH_Language.",
+            "schema": {
+              "$ref": "#/definitions/GWSAMPLE_BASIC.VH_Language"
+            }
+          },
+          "204": {
+            "description": "Empty response."
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Error": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "GWSAMPLE_BASIC.BusinessPartner": {
+      "type": "object",
+      "properties": {
+        "Address": {
+          "type": "object"
+        },
+        "BusinessPartnerID": {
+          "type": "string"
+        },
+        "CompanyName": {
+          "type": "string"
+        },
+        "WebAddress": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "FaxNumber": {
+          "type": "string"
+        },
+        "LegalForm": {
+          "type": "string"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "BusinessPartnerRole": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ChangedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "Address",
+        "BusinessPartnerID",
+        "CompanyName",
+        "EmailAddress",
+        "CurrencyCode",
+        "BusinessPartnerRole"
+      ]
+    },
+    "GWSAMPLE_BASIC.Product": {
+      "type": "object",
+      "properties": {
+        "ProductID": {
+          "type": "string"
+        },
+        "TypeCode": {
+          "type": "string"
+        },
+        "Category": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "NameLanguage": {
+          "type": "string"
+        },
+        "Description": {
+          "type": "string"
+        },
+        "DescriptionLanguage": {
+          "type": "string"
+        },
+        "SupplierID": {
+          "type": "string"
+        },
+        "SupplierName": {
+          "type": "string"
+        },
+        "TaxTarifCode": {
+          "type": "string",
+          "format": "byte"
+        },
+        "MeasureUnit": {
+          "type": "string"
+        },
+        "WeightMeasure": {
+          "type": "number",
+          "format": "double"
+        },
+        "WeightUnit": {
+          "type": "string"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "Price": {
+          "type": "number",
+          "format": "double"
+        },
+        "Width": {
+          "type": "number",
+          "format": "double"
+        },
+        "Depth": {
+          "type": "number",
+          "format": "double"
+        },
+        "Height": {
+          "type": "number",
+          "format": "double"
+        },
+        "DimUnit": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ChangedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ProductID",
+        "TypeCode",
+        "Category",
+        "Name",
+        "SupplierID",
+        "TaxTarifCode",
+        "MeasureUnit",
+        "CurrencyCode"
+      ]
+    },
+    "GWSAMPLE_BASIC.SalesOrder": {
+      "type": "object",
+      "properties": {
+        "SalesOrderID": {
+          "type": "string"
+        },
+        "Note": {
+          "type": "string"
+        },
+        "NoteLanguage": {
+          "type": "string"
+        },
+        "CustomerID": {
+          "type": "string"
+        },
+        "CustomerName": {
+          "type": "string"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "GrossAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "NetAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "TaxAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "LifecycleStatus": {
+          "type": "string"
+        },
+        "LifecycleStatusDescription": {
+          "type": "string"
+        },
+        "BillingStatus": {
+          "type": "string"
+        },
+        "BillingStatusDescription": {
+          "type": "string"
+        },
+        "DeliveryStatus": {
+          "type": "string"
+        },
+        "DeliveryStatusDescription": {
+          "type": "string"
+        },
+        "CreatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "ChangedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "SalesOrderID",
+        "CustomerID"
+      ]
+    },
+    "GWSAMPLE_BASIC.SalesOrderLineItem": {
+      "type": "object",
+      "properties": {
+        "SalesOrderID": {
+          "type": "string"
+        },
+        "ItemPosition": {
+          "type": "string"
+        },
+        "ProductID": {
+          "type": "string"
+        },
+        "Note": {
+          "type": "string"
+        },
+        "NoteLanguage": {
+          "type": "string"
+        },
+        "CurrencyCode": {
+          "type": "string"
+        },
+        "GrossAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "NetAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "TaxAmount": {
+          "type": "number",
+          "format": "double"
+        },
+        "DeliveryDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "Quantity": {
+          "type": "number",
+          "format": "double"
+        },
+        "QuantityUnit": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "SalesOrderID",
+        "ItemPosition",
+        "ProductID",
+        "DeliveryDate",
+        "Quantity"
+      ]
+    },
+    "GWSAMPLE_BASIC.Contact": {
+      "type": "object",
+      "properties": {
+        "Address": {
+          "type": "object"
+        },
+        "ContactGuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "BusinessPartnerID": {
+          "type": "string"
+        },
+        "Title": {
+          "type": "string"
+        },
+        "FirstName": {
+          "type": "string"
+        },
+        "MiddleName": {
+          "type": "string"
+        },
+        "LastName": {
+          "type": "string"
+        },
+        "Nickname": {
+          "type": "string"
+        },
+        "Initials": {
+          "type": "string"
+        },
+        "Sex": {
+          "type": "string"
+        },
+        "PhoneNumber": {
+          "type": "string"
+        },
+        "FaxNumber": {
+          "type": "string"
+        },
+        "EmailAddress": {
+          "type": "string"
+        },
+        "Language": {
+          "type": "string"
+        },
+        "DateOfBirth": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "Address",
+        "ContactGuid",
+        "BusinessPartnerID",
+        "FirstName",
+        "Sex"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_Sex": {
+      "type": "object",
+      "properties": {
+        "Sex": {
+          "type": "string"
+        },
+        "Shorttext": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Sex",
+        "Shorttext"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_Country": {
+      "type": "object",
+      "properties": {
+        "Land1": {
+          "type": "string"
+        },
+        "Landx": {
+          "type": "string"
+        },
+        "Natio": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Land1",
+        "Landx",
+        "Natio"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_AddressType": {
+      "type": "object",
+      "properties": {
+        "AddressType": {
+          "type": "string"
+        },
+        "Shorttext": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "AddressType",
+        "Shorttext"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_Category": {
+      "type": "object",
+      "properties": {
+        "Category": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Category"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_Currency": {
+      "type": "object",
+      "properties": {
+        "Waers": {
+          "type": "string"
+        },
+        "Ltext": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Waers",
+        "Ltext"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_UnitQuantity": {
+      "type": "object",
+      "properties": {
+        "Msehi": {
+          "type": "string"
+        },
+        "Msehl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Msehi",
+        "Msehl"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_UnitWeight": {
+      "type": "object",
+      "properties": {
+        "Msehi": {
+          "type": "string"
+        },
+        "Msehl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Msehi",
+        "Msehl"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_UnitLength": {
+      "type": "object",
+      "properties": {
+        "Msehi": {
+          "type": "string"
+        },
+        "Msehl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Msehi",
+        "Msehl"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_ProductTypeCode": {
+      "type": "object",
+      "properties": {
+        "TypeCode": {
+          "type": "string"
+        },
+        "Shorttext": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "TypeCode",
+        "Shorttext"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_BPRole": {
+      "type": "object",
+      "properties": {
+        "BpRole": {
+          "type": "string"
+        },
+        "Shorttext": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "BpRole",
+        "Shorttext"
+      ]
+    },
+    "GWSAMPLE_BASIC.VH_Language": {
+      "type": "object",
+      "properties": {
+        "Spras": {
+          "type": "string"
+        },
+        "Sptxt": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "Spras",
+        "Sptxt"
+      ]
+    }
+  }
+}
