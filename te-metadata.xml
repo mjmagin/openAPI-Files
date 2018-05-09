@@ -1,0 +1,367 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+<edmx:DataServices xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2007/05/edm" Namespace="NAV">
+<EntityType Name="PgEnwisAppNotifications">
+<Key>
+<PropertyRef Name="Entry_No"/>
+</Key>
+<Property Name="Entry_No" Type="Edm.Int32" Nullable="false"/>
+<Property Name="User_Name" Type="Edm.String"/>
+<Property Name="Notification_Detail" Type="Edm.String"/>
+<Property Name="Status" Type="Edm.String"/>
+<Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed"/>
+</EntityType>
+<EntityType Name="PgTaskSite">
+<Key>
+<PropertyRef Name="Code"/>
+<PropertyRef Name="Customer_No"/>
+</Key>
+<Property Name="Customer_No" Type="Edm.String" Nullable="false"/>
+<Property Name="Code" Type="Edm.String" Nullable="false"/>
+<Property Name="Name" Type="Edm.String"/>
+<Property Name="Name_2" Type="Edm.String"/>
+<Property Name="Address" Type="Edm.String"/>
+<Property Name="Address_2" Type="Edm.String"/>
+<Property Name="Street_Name" Type="Edm.String"/>
+<Property Name="Street_No" Type="Edm.String"/>
+<Property Name="Post_Code" Type="Edm.String"/>
+<Property Name="City" Type="Edm.String"/>
+<Property Name="Country_Region_Code" Type="Edm.String"/>
+<Property Name="Phone_No" Type="Edm.String"/>
+<Property Name="Fax_No" Type="Edm.String"/>
+<Property Name="Contact" Type="Edm.String"/>
+<Property Name="Waste_Producer_No" Type="Edm.String"/>
+<Property Name="Location_Code" Type="Edm.String"/>
+<Property Name="Dispatching_Group_Code" Type="Edm.String"/>
+<Property Name="Search_Name" Type="Edm.String"/>
+<Property Name="ETag" Type="Edm.String" ConcurrencyMode="Fixed"/>
+</EntityType>
+<EntityType Name="QryAllServices">
+<Key>
+<PropertyRef Name="Address"/>
+<PropertyRef Name="Business_with_No"/>
+<PropertyRef Name="Description"/>
+<PropertyRef Name="Document_No"/>
+<PropertyRef Name="Name"/>
+<PropertyRef Name="No"/>
+<PropertyRef Name="Task_at_Code"/>
+<PropertyRef Name="Unit_Price"/>
+</Key>
+<Property Name="Business_with_No" Type="Edm.String" Nullable="false"/>
+<Property Name="Document_No" Type="Edm.String" Nullable="false"/>
+<Property Name="No" Type="Edm.String" Nullable="false"/>
+<Property Name="Task_at_Code" Type="Edm.String" Nullable="false"/>
+<Property Name="Count_" Type="Edm.Int32"/>
+<Property Name="Unit_Price" Type="Edm.Decimal" Nullable="false"/>
+<Property Name="Description" Type="Edm.String" Nullable="false"/>
+<Property Name="Name" Type="Edm.String" Nullable="false"/>
+<Property Name="Address" Type="Edm.String" Nullable="false"/>
+<Property Name="User_Security_ID_FilterOnly" Type="Edm.Guid"/>
+</EntityType>
+<EntityType Name="QryCompanyInfo">
+<Key>
+<PropertyRef Name="AuxiliaryIndex1"/>
+</Key>
+<Property Name="Name" Type="Edm.String"/>
+<Property Name="Address" Type="Edm.String"/>
+<Property Name="Address_2" Type="Edm.String"/>
+<Property Name="County" Type="Edm.String"/>
+<Property Name="City" Type="Edm.String"/>
+<Property Name="Post_Code" Type="Edm.String"/>
+<Property Name="Country_Region_Code" Type="Edm.String"/>
+<Property Name="Phone_No" Type="Edm.String"/>
+<Property Name="E_Mail" Type="Edm.String"/>
+<Property Name="Home_Page" Type="Edm.String"/>
+<Property Name="AuxiliaryIndex1" Type="Edm.String" Nullable="false"/>
+</EntityType>
+<EntityType Name="QryContractedServices">
+<Key>
+<PropertyRef Name="Address"/>
+<PropertyRef Name="Business_with_No"/>
+<PropertyRef Name="Contract_No"/>
+<PropertyRef Name="Description"/>
+<PropertyRef Name="Name"/>
+<PropertyRef Name="Service_No"/>
+<PropertyRef Name="Task_Date"/>
+<PropertyRef Name="Task_Site_Code"/>
+<PropertyRef Name="Unit_Price"/>
+</Key>
+<Property Name="Business_with_No" Type="Edm.String" Nullable="false"/>
+<Property Name="Contract_No" Type="Edm.String" Nullable="false"/>
+<Property Name="Service_No" Type="Edm.String" Nullable="false"/>
+<Property Name="Task_Site_Code" Type="Edm.String" Nullable="false"/>
+<Property Name="Count_" Type="Edm.Int32"/>
+<Property Name="Unit_Price" Type="Edm.Decimal" Nullable="false"/>
+<Property Name="Description" Type="Edm.String" Nullable="false"/>
+<Property Name="Name" Type="Edm.String" Nullable="false"/>
+<Property Name="Address" Type="Edm.String" Nullable="false"/>
+<Property Name="Task_Date" Type="Edm.DateTime" Nullable="false"/>
+<Property Name="User_Security_ID_FilterOnly" Type="Edm.Guid"/>
+</EntityType>
+<EntityType Name="QryContracts">
+<Key>
+<PropertyRef Name="AuxiliaryIndex1"/>
+<PropertyRef Name="AuxiliaryIndex2"/>
+<PropertyRef Name="AuxiliaryIndex3"/>
+<PropertyRef Name="AuxiliaryIndex4"/>
+<PropertyRef Name="AuxiliaryIndex5"/>
+<PropertyRef Name="AuxiliaryIndex6"/>
+<PropertyRef Name="AuxiliaryIndex7"/>
+<PropertyRef Name="Document_No"/>
+</Key>
+<Property Name="User_Name" Type="Edm.String"/>
+<Property Name="Business_with_No" Type="Edm.String"/>
+<Property Name="Type" Type="Edm.String"/>
+<Property Name="Document_No" Type="Edm.String" Nullable="false"/>
+<Property Name="No" Type="Edm.String"/>
+<Property Name="Task_at_Code" Type="Edm.String"/>
+<Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false"/>
+<Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false"/>
+<Property Name="AuxiliaryIndex3" Type="Edm.String" Nullable="false"/>
+<Property Name="AuxiliaryIndex4" Type="Edm.String" Nullable="false"/>
+<Property Name="AuxiliaryIndex5" Type="Edm.String" Nullable="false"/>
+<Property Name="AuxiliaryIndex6" Type="Edm.String" Nullable="false"/>
+<Property Name="AuxiliaryIndex7" Type="Edm.Int32" Nullable="false"/>
+<Property Name="User_Security_ID_FilterOnly" Type="Edm.Guid"/>
+</EntityType>
+<EntityType Name="QryNotificationCount">
+<Key>
+<PropertyRef Name="Count_"/>
+</Key>
+<Property Name="Count_" Type="Edm.Int32" Nullable="false"/>
+<Property Name="User_Security_ID_FilterOnly" Type="Edm.Guid"/>
+</EntityType>
+<EntityType Name="QryNotifications">
+<Key>
+<PropertyRef Name="AuxiliaryIndex1"/>
+</Key>
+<Property Name="Notification_Detail" Type="Edm.String"/>
+<Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false"/>
+<Property Name="User_Security_ID_FilterOnly" Type="Edm.Guid"/>
+</EntityType>
+<EntityType Name="QryRequests">
+<Key>
+<PropertyRef Name="AuxiliaryIndex1"/>
+</Key>
+<Property Name="User_Security_ID" Type="Edm.Guid"/>
+<Property Name="Request_Type" Type="Edm.String"/>
+<Property Name="Businness_with_No" Type="Edm.String"/>
+<Property Name="Service_No" Type="Edm.String"/>
+<Property Name="Request_Date" Type="Edm.DateTime"/>
+<Property Name="Request_Time" Type="Edm.String"/>
+<Property Name="Detail" Type="Edm.String"/>
+<Property Name="Task_at_Code" Type="Edm.String"/>
+<Property Name="Quantity" Type="Edm.Decimal"/>
+<Property Name="User_Reference_No" Type="Edm.String"/>
+<Property Name="Contract_No" Type="Edm.String"/>
+<Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false"/>
+</EntityType>
+<EntityType Name="QryRequestsCount">
+<Key>
+<PropertyRef Name="User_Security_ID"/>
+</Key>
+<Property Name="User_Security_ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="Count_" Type="Edm.Int32"/>
+</EntityType>
+<EntityType Name="QryTaskSites">
+<Key>
+<PropertyRef Name="AuxiliaryIndex1"/>
+<PropertyRef Name="AuxiliaryIndex2"/>
+<PropertyRef Name="AuxiliaryIndex3"/>
+<PropertyRef Name="AuxiliaryIndex4"/>
+<PropertyRef Name="AuxiliaryIndex5"/>
+<PropertyRef Name="AuxiliaryIndex6"/>
+<PropertyRef Name="AuxiliaryIndex7"/>
+</Key>
+<Property Name="Business_with_No" Type="Edm.String"/>
+<Property Name="Task_at_Code" Type="Edm.String"/>
+<Property Name="Name" Type="Edm.String"/>
+<Property Name="Address" Type="Edm.String"/>
+<Property Name="AuxiliaryIndex1" Type="Edm.Guid" Nullable="false"/>
+<Property Name="AuxiliaryIndex2" Type="Edm.Guid" Nullable="false"/>
+<Property Name="AuxiliaryIndex3" Type="Edm.String" Nullable="false"/>
+<Property Name="AuxiliaryIndex4" Type="Edm.Int32" Nullable="false"/>
+<Property Name="AuxiliaryIndex5" Type="Edm.Int32" Nullable="false"/>
+<Property Name="AuxiliaryIndex6" Type="Edm.String" Nullable="false"/>
+<Property Name="AuxiliaryIndex7" Type="Edm.String" Nullable="false"/>
+<Property Name="User_Security_ID_FilterOnly" Type="Edm.Guid"/>
+</EntityType>
+<EntityType Name="QryUserCheck">
+<Key>
+<PropertyRef Name="AuxiliaryIndex1"/>
+<PropertyRef Name="AuxiliaryIndex2"/>
+<PropertyRef Name="AuxiliaryIndex3"/>
+<PropertyRef Name="Company_Name"/>
+<PropertyRef Name="Odata_Port"/>
+<PropertyRef Name="User_Security_ID"/>
+</Key>
+<Property Name="User_Security_ID" Type="Edm.Guid" Nullable="false"/>
+<Property Name="Company_Name" Type="Edm.String" Nullable="false"/>
+<Property Name="Odata_Port" Type="Edm.Int32" Nullable="false"/>
+<Property Name="Name" Type="Edm.String"/>
+<Property Name="E_Mail" Type="Edm.String"/>
+<Property Name="Salutation_Code" Type="Edm.String"/>
+<Property Name="First_Name" Type="Edm.String"/>
+<Property Name="Surname" Type="Edm.String"/>
+<Property Name="Phone_No" Type="Edm.String"/>
+<Property Name="AuxiliaryIndex1" Type="Edm.Int32" Nullable="false"/>
+<Property Name="AuxiliaryIndex2" Type="Edm.String" Nullable="false"/>
+<Property Name="AuxiliaryIndex3" Type="Edm.String" Nullable="false"/>
+<Property Name="User_Name_FilterOnly" Type="Edm.String"/>
+</EntityType>
+<EntityType Name="QryWasteGraph">
+<Key>
+<PropertyRef Name="Business_with_No"/>
+<PropertyRef Name="Period_Name"/>
+<PropertyRef Name="Period_No"/>
+</Key>
+<Property Name="Period_No" Type="Edm.Int32" Nullable="false"/>
+<Property Name="Period_Name" Type="Edm.String" Nullable="false"/>
+<Property Name="Sum_Quantity" Type="Edm.Decimal"/>
+<Property Name="Business_with_No" Type="Edm.String" Nullable="false"/>
+<Property Name="Period_Start_FilterOnly" Type="Edm.DateTime"/>
+<Property Name="Period_End_FilterOnly" Type="Edm.DateTime"/>
+<Property Name="User_Security_ID_FilterOnly" Type="Edm.Guid"/>
+</EntityType>
+<EntityType Name="Company">
+<Key>
+<PropertyRef Name="Name"/>
+</Key>
+<Property Name="Name" Type="Edm.String" Nullable="false"/>
+<NavigationProperty Name="PgEnwisAppNotifications" Relationship="NAV.Company_PgEnwisAppNotifications" ToRole="PgEnwisAppNotifications" FromRole="Company"/>
+<NavigationProperty Name="PgTaskSite" Relationship="NAV.Company_PgTaskSite" ToRole="PgTaskSite" FromRole="Company"/>
+<NavigationProperty Name="QryAllServices" Relationship="NAV.Company_QryAllServices" ToRole="QryAllServices" FromRole="Company"/>
+<NavigationProperty Name="QryCompanyInfo" Relationship="NAV.Company_QryCompanyInfo" ToRole="QryCompanyInfo" FromRole="Company"/>
+<NavigationProperty Name="QryContractedServices" Relationship="NAV.Company_QryContractedServices" ToRole="QryContractedServices" FromRole="Company"/>
+<NavigationProperty Name="QryContracts" Relationship="NAV.Company_QryContracts" ToRole="QryContracts" FromRole="Company"/>
+<NavigationProperty Name="QryNotificationCount" Relationship="NAV.Company_QryNotificationCount" ToRole="QryNotificationCount" FromRole="Company"/>
+<NavigationProperty Name="QryNotifications" Relationship="NAV.Company_QryNotifications" ToRole="QryNotifications" FromRole="Company"/>
+<NavigationProperty Name="QryRequests" Relationship="NAV.Company_QryRequests" ToRole="QryRequests" FromRole="Company"/>
+<NavigationProperty Name="QryRequestsCount" Relationship="NAV.Company_QryRequestsCount" ToRole="QryRequestsCount" FromRole="Company"/>
+<NavigationProperty Name="QryTaskSites" Relationship="NAV.Company_QryTaskSites" ToRole="QryTaskSites" FromRole="Company"/>
+<NavigationProperty Name="QryUserCheck" Relationship="NAV.Company_QryUserCheck" ToRole="QryUserCheck" FromRole="Company"/>
+<NavigationProperty Name="QryWasteGraph" Relationship="NAV.Company_QryWasteGraph" ToRole="QryWasteGraph" FromRole="Company"/>
+</EntityType>
+<Association Name="Company_PgEnwisAppNotifications">
+<End Type="NAV.PgEnwisAppNotifications" Role="PgEnwisAppNotifications" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_PgTaskSite">
+<End Type="NAV.PgTaskSite" Role="PgTaskSite" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryAllServices">
+<End Type="NAV.QryAllServices" Role="QryAllServices" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryCompanyInfo">
+<End Type="NAV.QryCompanyInfo" Role="QryCompanyInfo" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryContractedServices">
+<End Type="NAV.QryContractedServices" Role="QryContractedServices" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryContracts">
+<End Type="NAV.QryContracts" Role="QryContracts" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryNotificationCount">
+<End Type="NAV.QryNotificationCount" Role="QryNotificationCount" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryNotifications">
+<End Type="NAV.QryNotifications" Role="QryNotifications" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryRequests">
+<End Type="NAV.QryRequests" Role="QryRequests" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryRequestsCount">
+<End Type="NAV.QryRequestsCount" Role="QryRequestsCount" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryTaskSites">
+<End Type="NAV.QryTaskSites" Role="QryTaskSites" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryUserCheck">
+<End Type="NAV.QryUserCheck" Role="QryUserCheck" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<Association Name="Company_QryWasteGraph">
+<End Type="NAV.QryWasteGraph" Role="QryWasteGraph" Multiplicity="*"/>
+<End Type="NAV.Company" Role="Company" Multiplicity="*"/>
+</Association>
+<EntityContainer Name="NAV" m:IsDefaultEntityContainer="true">
+<EntitySet Name="PgEnwisAppNotifications" EntityType="NAV.PgEnwisAppNotifications"/>
+<EntitySet Name="PgTaskSite" EntityType="NAV.PgTaskSite"/>
+<EntitySet Name="QryAllServices" EntityType="NAV.QryAllServices"/>
+<EntitySet Name="QryCompanyInfo" EntityType="NAV.QryCompanyInfo"/>
+<EntitySet Name="QryContractedServices" EntityType="NAV.QryContractedServices"/>
+<EntitySet Name="QryContracts" EntityType="NAV.QryContracts"/>
+<EntitySet Name="QryNotificationCount" EntityType="NAV.QryNotificationCount"/>
+<EntitySet Name="QryNotifications" EntityType="NAV.QryNotifications"/>
+<EntitySet Name="QryRequests" EntityType="NAV.QryRequests"/>
+<EntitySet Name="QryRequestsCount" EntityType="NAV.QryRequestsCount"/>
+<EntitySet Name="QryTaskSites" EntityType="NAV.QryTaskSites"/>
+<EntitySet Name="QryUserCheck" EntityType="NAV.QryUserCheck"/>
+<EntitySet Name="QryWasteGraph" EntityType="NAV.QryWasteGraph"/>
+<EntitySet Name="Company" EntityType="NAV.Company"/>
+<AssociationSet Name="Company_PgEnwisAppNotifications_PgEnwisAppNotifications" Association="NAV.Company_PgEnwisAppNotifications">
+<End Role="Company" EntitySet="Company"/>
+<End Role="PgEnwisAppNotifications" EntitySet="PgEnwisAppNotifications"/>
+</AssociationSet>
+<AssociationSet Name="Company_PgTaskSite_PgTaskSite" Association="NAV.Company_PgTaskSite">
+<End Role="Company" EntitySet="Company"/>
+<End Role="PgTaskSite" EntitySet="PgTaskSite"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryAllServices_QryAllServices" Association="NAV.Company_QryAllServices">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryAllServices" EntitySet="QryAllServices"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryCompanyInfo_QryCompanyInfo" Association="NAV.Company_QryCompanyInfo">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryCompanyInfo" EntitySet="QryCompanyInfo"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryContractedServices_QryContractedServices" Association="NAV.Company_QryContractedServices">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryContractedServices" EntitySet="QryContractedServices"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryContracts_QryContracts" Association="NAV.Company_QryContracts">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryContracts" EntitySet="QryContracts"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryNotificationCount_QryNotificationCount" Association="NAV.Company_QryNotificationCount">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryNotificationCount" EntitySet="QryNotificationCount"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryNotifications_QryNotifications" Association="NAV.Company_QryNotifications">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryNotifications" EntitySet="QryNotifications"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryRequests_QryRequests" Association="NAV.Company_QryRequests">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryRequests" EntitySet="QryRequests"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryRequestsCount_QryRequestsCount" Association="NAV.Company_QryRequestsCount">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryRequestsCount" EntitySet="QryRequestsCount"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryTaskSites_QryTaskSites" Association="NAV.Company_QryTaskSites">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryTaskSites" EntitySet="QryTaskSites"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryUserCheck_QryUserCheck" Association="NAV.Company_QryUserCheck">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryUserCheck" EntitySet="QryUserCheck"/>
+</AssociationSet>
+<AssociationSet Name="Company_QryWasteGraph_QryWasteGraph" Association="NAV.Company_QryWasteGraph">
+<End Role="Company" EntitySet="Company"/>
+<End Role="QryWasteGraph" EntitySet="QryWasteGraph"/>
+</AssociationSet>
+</EntityContainer>
+</Schema>
+</edmx:DataServices>
+</edmx:Edmx>
