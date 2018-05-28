@@ -1,0 +1,188 @@
+swagger: '2.0'
+info:
+  description: defaultDescription
+  version: "0.2"
+  title: defaultTitle
+
+host: 'api.box.com'
+basePath: '/2.0'
+
+schemes:
+  - https
+
+securityDefinitions:  
+  
+  bearerToken:
+    type: apiKey
+    name: Authorization
+    in: header
+    x-bearer: true
+    
+security:  
+  - bearerToken: []
+
+paths:
+
+  /files/{file_id}:
+    get:
+      description: Get File Info
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: file_id
+          required: true
+          description: Id of file
+          type: integer
+        - in: header
+          name: authorization
+          description: key
+          type: string
+        - in: query
+          name: fields
+          description: Set to expiring_embed_link to create an embedded preview session
+          type: string
+          default: expiring_embed_link
+          
+      responses:
+        '200':
+          description: Definition generated from Swagger Inspector
+          schema:
+            type: file
+
+  /files/{file_id}/content:
+    get:
+      description: Get Contents of a File
+      produces:
+        - application/octet-stream
+      parameters:
+        - in: path
+          name: file_id
+          required: true
+          description: Id of file
+          type: integer
+        - in: header
+          name: authorization
+          description: key
+          type: string
+          
+      responses:
+        '200':
+          description: Definition generated from Swagger Inspector
+          schema:
+            type: file
+
+  /folders/{folder_id}/items:
+    get:
+      description: Get Contents of a Folder
+      produces:
+        - application/json
+      parameters:
+        - in: path
+          name: folder_id
+          required: true
+          description: Id OF Folder 0 for Root
+          type: integer
+        - in: header
+          name: authorization
+          description: key
+          type: string
+        
+      responses:
+        '200':
+          description: Definition generated from Swagger Inspector
+          schema:
+            properties:
+              total_count:
+                type: integer
+                format: int32
+              entries:
+                type: array
+                items:
+                  properties:
+                    type:
+                      type: string
+                    id:
+                      type: string
+                    file_version:
+                      properties:
+                        type:
+                          type: string
+                        id:
+                          type: string
+                        sha1:
+                          type: string
+                    sequence_id:
+                      type: string
+                    etag:
+                      type: string
+                    sha1:
+                      type: string
+                    name:
+                      type: string
+              offset:
+                type: integer
+                format: int32
+              limit:
+                type: integer
+                format: int32
+              order:
+                type: array
+                items:
+                  properties:
+                    by:
+                      type: string
+                    direction:
+                      type: string
+      
+
+definitions:
+  Order:
+    properties:
+      by:
+        type: string
+      direction:
+        type: string
+  File_version:
+    properties:
+      type:
+        type: string
+      id:
+        type: string
+      sha1:
+        type: string
+  Model0:
+    properties:
+      total_count:
+        type: integer
+        format: int32
+      entries:
+        type: array
+        items:
+          $ref: '#/definitions/Entries'
+      offset:
+        type: integer
+        format: int32
+      limit:
+        type: integer
+        format: int32
+      order:
+        type: array
+        items:
+          $ref: '#/definitions/Order'
+  Entries:
+    properties:
+      type:
+        type: string
+      id:
+        type: string
+      file_version:
+        $ref: '#/definitions/File_version'
+      sequence_id:
+        type: string
+      etag:
+        type: string
+      sha1:
+        type: string
+      name:
+        type: string
