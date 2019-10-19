@@ -1,0 +1,319 @@
+swagger: '2.0'
+info:
+  description: Demo Mock
+  version: 1.0.0
+  title: Demo Mock
+
+host: virtserver.swaggerhub.com
+basePath: /CothamTechnologies/DemoMock1/1.0.0
+schemes:
+ - https
+
+paths:
+  
+  /generalData:
+    get:
+      summary: generalData
+      description: generalData
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              attr1:
+                type: string
+                example: attribute 1 Data
+              attr2:
+                type: string
+                example: attribute 2 Data
+              attr3:
+                type: string
+                example: attribute 1 Data
+              attr4:
+                type: string
+                example: attribute 2 Data
+        default:
+          description: server error
+  
+  /list1:
+    get:
+      summary: list1
+      description: list1
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                description: 
+                  type: string
+                              
+            example:
+              - description: Regular
+              - description: Supreme
+              - description: Diesel
+
+
+        default:
+          description: server error
+  
+  /list2:
+    get:
+      summary: list2
+      description: list2
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                description: 
+                  type: string
+                              
+            example:
+              - description: Estate
+              - description: Hatchback
+              - description: Saloon
+              - description: Coupe
+              - description: SUV
+              - description: MPV
+
+
+        default:
+          description: server error
+  
+  /list3:
+    get:
+      summary: list3
+      description: list3
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                description: 
+                  type: string
+                              
+            example:
+              - description: Audi
+              - description: Jaguar
+              - description: Porche
+              - description: VW
+              - description: Ford
+              - description: Honda
+
+
+        default:
+          description: server error
+  
+  /list4:
+    get:
+      summary: list4
+      description: list4
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                fueltype:
+                  type: string
+                price:
+                  type: string
+            example:
+              - fueltype: Regular
+                price: 172.9
+              - fueltype: Supreme
+                price: 192.9
+              - fueltype: Diesel
+                price: 154.9
+
+        default:
+          description: server error
+  
+  /list5:
+    get:
+      summary: list5
+      description: list5
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                vehicletank:
+                  type: string
+
+            example:
+              - vehicletank: Tank
+              - vehicletank: Vehicle
+
+
+        default:
+          description: server error
+  
+  /salutations:
+    get:
+      summary: salutations
+      description: salutations
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+
+            example:
+              - name: Mr
+              - name: Ms
+              - name: Miss
+              - name: Mrs
+
+
+        default:
+          description: server error
+  
+  /addresstype:
+    get:
+      summary: addresstype
+      description: addresstype
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+
+            example:
+              - name: Delivery
+              - name: Billing
+
+
+
+        default:
+          description: server error
+  
+  /login:
+    get:
+      summary: login
+      description: login
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: email
+        type: string
+        description: email
+        required: true
+      - in: query
+        name: password
+        type: string
+        description: password
+        required: true 
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              token:
+                type: string
+                example: hdjhjdhjfdhjdfhjfd878&&
+              expiry:
+                type: string
+                example: 4097174399
+        default:
+          description: server error
