@@ -75,11 +75,14 @@ paths:
                     properties:
                       testitem:
                         type: string
+                      anotheritem:
+                        type: string
                               
             example:
               - description: Regular
                 testarray:
                   - testitem: test item 1
+                    anotheritem: another 1
               - description: Supreme
                 testarray:
                   - testitem: test item 2
@@ -230,6 +233,40 @@ paths:
 
         default:
           description: server error
+  
+  /list6:
+    get:
+      summary: list6
+      description: list6
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                description: 
+                  type: string
+                testarray:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      testitem:
+                        type: string
+                              
+            example:
+              
   
   /salutations:
     get:
