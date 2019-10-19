@@ -68,11 +68,24 @@ paths:
               properties:
                 description: 
                   type: string
+                testarray:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      testitem:
+                        type: string
                               
             example:
               - description: Regular
+                testarray:
+                  - testitem: test item 1
               - description: Supreme
+                testarray:
+                  - testitem: test item 2
               - description: Diesel
+                testarray:
+                  - testitem: test item 3
 
 
         default:
