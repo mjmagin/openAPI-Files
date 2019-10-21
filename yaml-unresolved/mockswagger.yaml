@@ -162,10 +162,12 @@ paths:
         default:
           description: server error
   
-  /list4:
+  /fuelprices:
     get:
-      summary: list4
-      description: list4
+      summary: Get fuel prices
+      description: Get fuel prices
+      tags:
+        - Crowe Mackay
       produces:
       - application/json
       parameters:
@@ -198,10 +200,12 @@ paths:
         default:
           description: server error
   
-  /list5:
+  /tankvehicle:
     get:
-      summary: list5
-      description: list5
+      summary: get tank vehicle list
+      description: get tank vehicle list
+      tags:
+        - Crowe Mackay
       produces:
       - application/json
       parameters:
@@ -230,44 +234,13 @@ paths:
         default:
           description: server error
   
-  /list6:
-    get:
-      summary: list6
-      description: list6
-      produces:
-      - application/json
-      parameters:
-      - in: query
-        name: token
-        type: string
-        description: token
-        required: false
-     
-      responses:
-        200:
-          description: OK
-          schema:
-            type: array
-            items:
-              type: object
-              properties:
-                description: 
-                  type: string
-                testarray:
-                  type: array
-                  items:
-                    type: object
-                    properties:
-                      testitem:
-                        type: string
-                              
-            example:
-              
-  
+ 
   /salutations:
     get:
       summary: salutations
       description: salutations
+      tags:
+        - General
       produces:
       - application/json
       parameters:
@@ -302,6 +275,8 @@ paths:
     get:
       summary: addresstype
       description: addresstype
+      tags:
+        - General
       produces:
       - application/json
       parameters:
@@ -335,6 +310,8 @@ paths:
     get:
       summary: login
       description: login
+      tags:
+        - General
       produces:
       - application/json
       parameters:
