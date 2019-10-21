@@ -47,7 +47,7 @@ paths:
         default:
           description: server error
   
-  /list1:
+  /fueltypes:
     get:
       summary: Get Fuel Types
       description: Get Fuel Types
@@ -81,10 +81,12 @@ paths:
         default:
           description: server error
   
-  /list2:
+  /vehicleModels:
     get:
-      summary: list2
-      description: list2
+      summary: get vehicleModels
+      description: get vehicleModels
+      tags:
+        - Crowe Mackay
       produces:
       - application/json
       parameters:
@@ -92,6 +94,11 @@ paths:
         name: token
         type: string
         description: token
+        required: false
+      - in: query
+        name: make
+        type: string
+        description: vehicle make
         required: false
      
       responses:
