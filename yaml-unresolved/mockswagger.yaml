@@ -124,10 +124,12 @@ paths:
         default:
           description: server error
   
-  /list3:
+  /vehiclemakes:
     get:
-      summary: list3
-      description: list3
+      summary: get vehicle makes
+      description: get vehicle makes
+      tags:
+        - Crowe Mackay
       produces:
       - application/json
       parameters:
