@@ -15,6 +15,7 @@ paths:
     get:
       summary: generalData
       description: generalData
+      
       produces:
       - application/json
       parameters:
