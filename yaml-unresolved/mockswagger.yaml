@@ -152,8 +152,8 @@ paths:
   
   /vehicles:
     post:
-      summary: Add vehicles
-      description: Add vehicles
+      summary: Add vehicle
+      description: Add vehicle
       tags:
         - Crowe Mackay
       produces:
