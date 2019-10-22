@@ -118,34 +118,33 @@ paths:
             example:
               - makeName: Audi
                 model:
-                  - modelName: model 1
-                  - modelName: model 2
-                  - modelName: model 3
+                  - modelName: Audi model 1
+                  - modelName: Audi model 2
+                  - modelName: Audi model 3
               - makeName: Jaguar
                 model:
-                  - modelName: model 1
-                  - modelName: model 2
-                  - modelName: model 3
+                  - modelName: Jaguar model 1
+                  - modelName: Jaguar model 2
+                  - modelName: Jaguar model 3
               - makeName: Porche
                 model:
-                  - modelName: model 1
-                  - modelName: model 2
-                  - modelName: model 3
+                  - modelName: Porche model 1
+                  - modelName: Porche model 2
+                  - modelName: Porche model 3
               - makeName: VW
                 model:
-                  - modelName: model 1
-                  - modelName: model 2
-                  - modelName: model 3
+                  - modelName: VW model 1
+                  - modelName: VW model 2
+                  - modelName: VW model 3
               - makeName: Ford
                 model:
-                  - modelName: model 1
-                  - modelName: model 2
-                  - modelName: model 3
+                  - modelName: Ford model 2
+                  - modelName: Ford model 3
               - makeName: Honda
                 model:
-                  - modelName: model 1
-                  - modelName: model 2
-                  - modelName: model 3
+                  - modelName: Honda model 1
+                  - modelName: Honda model 2
+                  - modelName: Honda model 3
 
 
         default:
