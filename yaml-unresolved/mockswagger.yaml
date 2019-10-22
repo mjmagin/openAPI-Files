@@ -162,7 +162,7 @@ paths:
       - in: query
         name: token
         type: string
-        description: token
+        description: token.
         required: false
      
       responses:
