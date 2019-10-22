@@ -182,42 +182,14 @@ paths:
               type: number
      
       responses:
-        200:
-          description: OK
+        201:
+          description: Vehicle Created
           schema:
             type: object
             properties:
-              count:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    registration:
-                      type: string
-                    make:
-                      type: string
-                    model:
-                      type: string
-                    fueltype:
-                      type: string
-                    capacity:
-                      type: number
-
-            example:
-              count: 2
-              data:
-                - registration: FT11 YOL
-                  make: Audi
-                  model: Audi Model 1
-                  fueltype: Diesel
-                  capacity: 65
-                - registration: DR13 SDL
-                  make: Jaguar
-                  model: Jaguar Model 3
-                  fueltype: Regular
-                  capacity: 75
+              created :
+                type: string
+                example: true
 
         default:
           description: server error
