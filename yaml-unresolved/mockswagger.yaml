@@ -172,8 +172,7 @@ paths:
             type: object
             properties:
               count:
-                type: string
-                example: 2
+                type: integer
               data:
                 type: array
                 items:
@@ -191,16 +190,18 @@ paths:
                       type: number
 
             example:
-              - registration: FT11 YOL
-                make: Audi
-                model: Audi Model 1
-                fueltype: Diesel
-                capacity: 65
-              - registration: DR13 SDL
-                make: Jaguar
-                model: Jaguar Model 3
-                fueltype: Regular
-                capacity: 75
+              count: 2
+              data:
+                - registration: FT11 YOL
+                  make: Audi
+                  model: Audi Model 1
+                  fueltype: Diesel
+                  capacity: 65
+                - registration: DR13 SDL
+                  make: Jaguar
+                  model: Jaguar Model 3
+                  fueltype: Regular
+                  capacity: 75
 
         default:
           description: server error
