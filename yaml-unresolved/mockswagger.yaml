@@ -169,20 +169,26 @@ paths:
         200:
           description: OK
           schema:
-            type: array
-            items:
-              type: object
-              properties:
-                registration:
-                  type: string
-                make:
-                  type: string
-                model:
-                  type: string
-                fueltype:
-                  type: string
-                capacity:
-                  type: number
+            type: object
+            properties:
+              count:
+                type: integer
+                example: 2
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    registration:
+                      type: string
+                    make:
+                      type: string
+                    model:
+                      type: string
+                    fueltype:
+                      type: string
+                    capacity:
+                      type: number
 
             example:
               - registration: FT11 YOL
