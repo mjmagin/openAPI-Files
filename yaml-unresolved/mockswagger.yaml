@@ -170,16 +170,16 @@ paths:
         schema:
           type: object
           properties:
-             registration:
-                type: string
-              make:
-                type: string
-              model:
-                type: string
-              fueltype:
-                type: string
-              capacity:
-                type: number
+            registration:
+              type: string
+            make:
+              type: string
+            model:
+              type: string
+            fueltype:
+              type: string
+            capacity:
+              type: number
      
       responses:
         200:
