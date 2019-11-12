@@ -11,6 +11,70 @@ schemes:
 
 paths:
   
+  /guidelines:
+    get:
+      summary: Get guidelines
+      description: Get Dawn Raid guidelines
+      tags:
+        - Legal Dawn Raid
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                category: 
+                  type: string
+                guidelines:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      guiddescription:
+                        type: string
+                      guideurl:
+                        type: string
+            example:
+              - category: What documents must the officials present?
+                guidelines:
+                  - guiddescription: descrption words...1
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+                  - guiddescription: descrption words...2
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+                  - guiddescription: descrption words...2
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+              - category: Where and how may the officials search?
+                guidelines:
+                  - guiddescription: descrption words...1
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+                  - guiddescription: descrption words...2
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+                  - guiddescription: descrption words...2
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+                    checkbox: false
+              - category: What may the officials search
+                guidelines:
+                  - guiddescription: descrption words...1
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+                  - guiddescription: descrption words...2
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+                  - guiddescription: descrption words...2
+                    guideurl: https://www.winston.com/images/content/1/3/v2/139569/Dawn-Raid-Preparation-and-Response-Checklist.pdf
+              
+        default:
+          description: server error
+  
   /instructions:
     get:
       summary: Get Instructions
