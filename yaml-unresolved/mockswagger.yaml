@@ -49,8 +49,11 @@ paths:
               - category: Compliance/Legal
                 instructions:
                   - instdescription: Inform the legal department
+                  - checkbox: false
                   - instdescription: Instruct Secretary to send prepared email to all employees
+                  - checkbox: false
                   - instdescription: another instruction
+                  - checkbox: false
               - category: Reception
                 instructions:
                   - modelName: another instruction
