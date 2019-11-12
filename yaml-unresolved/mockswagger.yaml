@@ -57,13 +57,19 @@ paths:
               - category: Reception
                 instructions:
                   - modelName: another instruction
+                    checkbox: false
                   - modelName: another instruction
+                    checkbox: false
                   - modelName: another instruction
+                    checkbox: false
               - category: Other Employee
                 instructions:
                   - modelName: another instruction
+                    checkbox: false
                   - modelName: another instruction
+                    checkbox: false
                   - modelName: another instruction
+                    checkbox: false
               
         default:
           description: server error
