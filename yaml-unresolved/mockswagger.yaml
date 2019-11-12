@@ -159,12 +159,12 @@ paths:
           schema:
             type: object
             properties:
-              attr1:
+              emergencyPhone:
                 type: string
-                example: attribute 1 Data
-              attr2:
+                example: 07437 477576
+              emergencyEmail:
                 type: string
-                example: attribute 2 Data
+                example: james@cothamtechnologies.com
               attr3:
                 type: string
                 example: attribute 1 Data
