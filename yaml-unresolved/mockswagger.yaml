@@ -11,6 +11,60 @@ schemes:
 
 paths:
   
+  /instructions:
+    get:
+      summary: Get Instructions
+      description: Get Dawn Raid Instructions
+      tags:
+        - Legal Dawn Raid
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                category: 
+                  type: string
+                instructions:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      instdescription:
+                        type: string
+                      checkbox:
+                        type: string
+            example:
+              - category: Compliance/Legal
+                instructions:
+                  - instdescription: Inform the legal department
+                  - instdescription: Instruct Secretary to send prepared email to all employees
+                  - instdescription: another instruction
+              - category: Reception
+                instructions:
+                  - modelName: another instruction
+                  - modelName: another instruction
+                  - modelName: another instruction
+              - category: Other Employee
+                instructions:
+                  - modelName: another instruction
+                  - modelName: another instruction
+                  - modelName: another instruction
+              
+        default:
+          description: server error
+  
   /generalData:
     get:
       summary: generalData
