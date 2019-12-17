@@ -11,6 +11,40 @@ schemes:
 
 paths:
   
+  /instances:
+    get:
+      summary: Get Instances
+      description: Get Instances
+      tags:
+        - Cumulocity
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                description: 
+                  type: string
+                              
+            example:
+              - description: eu-latest.cumulocity.com
+              - description: cumulocity.com
+              - description: us.cumulocity.com
+              - description: apj.cumulocity.com
+
+        default:
+          description: server error
   
   /lawyers:
     get:
