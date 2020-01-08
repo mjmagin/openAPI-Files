@@ -11,7 +11,78 @@ schemes:
 
 paths:
   
-  /vehicleChecks:
+  /tapitodaysBookings:
+    get:
+      summary: Get todays bookings
+      description: Get todays bookings
+      tags:
+        - TAPI Estimator App
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: object
+            properties:
+              bookingdate:
+                type: string
+              status:
+                type: string
+              checklist:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    question: 
+                      type: string
+                    answer: 
+                      type: string
+                    comments: 
+                      type: string
+                    
+                              
+            example:
+              - bookingdate: 14/01/2020
+              - status: ""
+                checklist:
+                  - question: Is your vehicle in a roadworthy condition
+                    answer: ""
+                    comments: ""
+                  - question: Are your mobile devices charged
+                    answer: ""
+                    comments: ""
+                  - question: Have you got your toolkit including over shoes with you
+                    answer: ""
+                    comments: ""
+                  - question: All paperwork checked for each job
+                    answer: ""
+                    comments: ""
+                  - question: Have you advised your Manager of any problems
+                    answer: ""
+                    comments: ""
+                  - question: Wearing ID badge
+                    answer: ""
+                    comments: ""
+                  - question: Have you requested samples with you
+                    answer: ""
+                    comments: ""
+                  - question: Confirmed and signed vehicle checklist
+                    answer: ""
+                    comments: ""
+              
+
+        default:
+          description: server error
+  
+  /tapivehicleChecks:
     get:
       summary: Get vehicle checks
       description: Get vehicle checks
