@@ -56,6 +56,24 @@ paths:
                   - question: Are your mobile devices charged
                     answer: ""
                     comments: ""
+                  - question: Have you got your toolkit including over shoes with you
+                    answer: ""
+                    comments: ""
+                  - question: All paperwork checked for each job
+                    answer: ""
+                    comments: ""
+                  - question: Have you advised your Manager of any problems
+                    answer: ""
+                    comments: ""
+                  - question: Wearing ID badge
+                    answer: ""
+                    comments: ""
+                  - question: Have you requested samples with you
+                    answer: ""
+                    comments: ""
+                  - question: Confirmed and signed vehicle checklist
+                    answer: ""
+                    comments: ""
               
 
         default:
