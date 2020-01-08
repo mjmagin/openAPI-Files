@@ -51,7 +51,7 @@ paths:
               - bookingdate: 14/01/2020
                 checklist:
                   - question: Is your vehicle in a 
-                    answer: dd
+                    answer: ""
                     comments: 
                   - question: Are your mobile devices
                     answer: 
