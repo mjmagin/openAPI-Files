@@ -136,11 +136,24 @@ paths:
                       type: string
                     detailsPdf:
                       type: string
+                    questions:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          question:
+                            type: string
+                          answer:
+                            type: string
+                          comments:
+                            type: string
                     images:
                       type: array
                       items:
                         type: object
                         properties:
+                          photoId:
+                            type: string
                           photo:
                             type: string
                           photoComment:
@@ -150,7 +163,8 @@ paths:
             example:
               - status: Not Started
                 bookings:
-                  - bookingTime:
+                  - bookingDate: 14/01/2020
+                    bookingTime: 09.30
                     bookingNumber: 
                     salesPersonCode: 
                     storeName: 
@@ -162,8 +176,52 @@ paths:
                     comment: 
                     status:
                     detailsPdf:
-
-                  - 
+                    questions:
+                      - question: Discussed uplift and disposal
+                        answer: ""
+                        comments: ""
+                      - question: Explained about furnture moving
+                        answer: ""
+                        comments: ""
+                      - question: identify and note if using own underlay/accessories
+                        answer: ""
+                        comments: ""
+                      - question: Explained Joins
+                        answer: ""
+                        comments: ""
+                      - question: Explained pile directions of different areas
+                        comments: ""
+                      - question: Confirm range/colour for each area
+                        answer: ""
+                        comments: ""
+                      - question: Explained the delivery and acre package
+                        answer: ""
+                        comments: ""
+                      - question: Discussed the effects of sunlight to certain areas
+                        answer: ""
+                        comments: ""
+                      - question: Checked the floor temperature
+                        answer: ""
+                        comments: ""
+                      - question: Confirm I have discussed all of the above with the customer
+                        answer: ""
+                        comments: ""
+                    images:
+                      - photoId: 1
+                        photo: ""
+                        photoComment: ""
+                      - photoId: 2
+                        photo: ""
+                        photoComment: ""
+                      - photoId: 3
+                        photo: ""
+                        photoComment: ""
+                      - photoId: 4
+                        photo: ""
+                        photoComment: ""
+                      - photoId: 5
+                        photo: ""
+                        photoComment: ""
               
 
         default:
