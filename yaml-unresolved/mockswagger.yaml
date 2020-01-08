@@ -50,12 +50,12 @@ paths:
             example:
               - bookingdate: 14/01/2020
                 checklist:
-                  - question: Is your vehicle in a 
+                  - question: Is your vehicle in a roadworthy condition
                     answer: ""
-                    comments: 
-                  - question: Are your mobile devices
-                    answer: 
-                    comments:
+                    comments: ""
+                  - question: Are your mobile devices charged
+                    answer: ""
+                    comments: ""
               
 
         default:
