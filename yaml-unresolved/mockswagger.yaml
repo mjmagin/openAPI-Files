@@ -158,6 +158,23 @@ paths:
                             type: string
                           photoComment:
                             type: string
+                    confirmationBlock:
+                      type: object
+                      properties:
+                        question1:
+                          type: string
+                        answer1:
+                          type: string
+                        question2:
+                          type: string
+                        answer2:
+                          type: string
+                        question3:
+                          type: string
+                        answer3:
+                          type: string
+                        customerSignature:
+                          type: string
                     
                               
             example:
