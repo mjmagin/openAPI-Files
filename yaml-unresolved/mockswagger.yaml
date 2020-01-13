@@ -239,10 +239,11 @@ paths:
                     confirmationBlock:
                       question1: Confirm I have discussed all of the above with the customer
                       answer1: ""
-                      question2:
+                      question2: Is the customer proceeding with the quote
                       answer2: ""
-                      question3:
+                      question3: Does the customer wish to waiver the 14 day cooling off
                       answer3: ""
+                      customersName: ""
                       customerSignature: ""
 
         default:
