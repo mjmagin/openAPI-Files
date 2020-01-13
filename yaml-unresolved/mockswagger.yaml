@@ -220,9 +220,6 @@ paths:
                       - question: Checked the floor temperature
                         answer: ""
                         comments: ""
-                      - question: Confirm I have discussed all of the above with the customer
-                        answer: ""
-                        comments: ""
                     images:
                       - photoId: 1
                         photo: ""
@@ -239,7 +236,14 @@ paths:
                       - photoId: 5
                         photo: ""
                         photoComment: ""
-              
+                    confirmationBlock:
+                      - question1: Confirm I have discussed all of the above with the customer
+                      - answer1: ""
+                      - question2:
+                      - answer2: ""
+                      - question3:
+                      - answer3: ""
+                      - customerSignature: ""
 
         default:
           description: server error
