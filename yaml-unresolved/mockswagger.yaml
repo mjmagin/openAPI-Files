@@ -180,16 +180,16 @@ paths:
             example:
               - status: Not Started
                 bookings:
-                  - bookingDate: 14/01/2020
-                    bookingTime: 09.30
+                  - bookingDate: "14/01/2020"
+                    bookingTime: "09.30" 
                     bookingNumber: 1234
                     salesPersonCode: S456
                     storeName: Leamington
                     customerNo: C12345678
                     name: James Magin
-                    fullAddress: 90 Leam Terrace, Leamington Spa, Warwickshire, CV31 1DE
-                    phoneNo: 01926 465 123
-                    mobile: 07437477576
+                    fullAddress: "90 Leam Terrace, Leamington Spa, Warwickshire, CV31 1DE"
+                    phoneNo: "01926 465 123"
+                    mobile: "07437 477576"
                     comment: 
                     status:
                     detailsPdf:
