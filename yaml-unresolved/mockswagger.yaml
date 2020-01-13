@@ -237,13 +237,13 @@ paths:
                         photo: ""
                         photoComment: ""
                     confirmationBlock:
-                      - question1: Confirm I have discussed all of the above with the customer
-                      - answer1: ""
-                      - question2:
-                      - answer2: ""
-                      - question3:
-                      - answer3: ""
-                      - customerSignature: ""
+                      question1: Confirm I have discussed all of the above with the customer
+                      answer1: ""
+                      question2:
+                      answer2: ""
+                      question3:
+                      answer3: ""
+                      customerSignature: ""
 
         default:
           description: server error
