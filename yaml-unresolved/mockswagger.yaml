@@ -74,11 +74,11 @@ paths:
                               
             example:
               tasks:
-                - taskId: "14/01/2020"
-                  taskDescription: "09.30" 
-                  taskStatus: 1234
+                - taskId: "R1-1"
+                  taskDescription: "Enquire evacuation of all people from the building" 
+                  taskStatus: "Not Started"
                   notes:
-                    - note: "" 
+                    - note: "some notes" 
                       dateTime: ""
                   images:
                     - photo:  ""
@@ -86,7 +86,32 @@ paths:
                   videos:
                     - video:  ""
                       dateTime: ""
-
+                      
+                - taskId: "R1-2"
+                  taskDescription: "Identify the hazards and risks to crews and third parties" 
+                  taskStatus: "Not Started"
+                  notes:
+                    - note: "some notes" 
+                      dateTime: ""
+                  images:
+                    - photo:  ""
+                      dateTime: ""
+                  videos:
+                    - video:  ""
+                      dateTime: ""
+                      
+                - taskId: "R1-2"
+                  taskDescription: "Identify the hazards and risks to crews and third parties" 
+                  taskStatus: "Not Started"
+                  notes:
+                    - note: "some notes" 
+                      dateTime: ""
+                  images:
+                    - photo:  ""
+                      dateTime: ""
+                  videos:
+                    - video:  ""
+                      dateTime: ""
         default:
           description: server error
   
