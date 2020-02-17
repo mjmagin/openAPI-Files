@@ -57,8 +57,6 @@ paths:
                       items:
                         type: object
                         properties:
-                          photoId:
-                            type: string
                           photo:
                             type: string
                           dateTime:
@@ -69,8 +67,6 @@ paths:
                       items:
                         type: object
                         properties:
-                          videoId:
-                            type: string
                           video:
                             type: string
                           dateTime:
@@ -82,123 +78,14 @@ paths:
                   taskDescription: "09.30" 
                   taskStatus: 1234
                   notes:
-                    - question: Discussed uplift and disposal
-                      answer: ""
-                      comments: ""
-                    - question: Explained about furnture moving
-                      answer: ""
-                      comments: ""
-                    - question: identify and note if using own underlay/accessories
-                      answer: ""
-                      comments: ""
-                    - question: Explained Joins
-                      answer: ""
-                      comments: ""
-                    - question: Explained pile directions of different areas
-                      comments: ""
-                    - question: Confirm range/colour for each area
-                      answer: ""
-                      comments: ""
-                    - question: Explained the delivery and acre package
-                      answer: ""
-                      comments: ""
-                    - question: Discussed the effects of sunlight to certain areas
-                      answer: ""
-                      comments: ""
-                    - question: Checked the floor temperature
-                      answer: ""
-                      comments: ""
+                    - note: "" 
+                      dateTime: ""
                   images:
-                    - photoId: 1
-                      photo: ""
-                      photoComment: ""
-                    - photoId: 2
-                      photo: ""
-                      photoComment: ""
-                    - photoId: 3
-                      photo: ""
-                      photoComment: ""
-                    - photoId: 4
-                      photo: ""
-                      photoComment: ""
-                    - photoId: 5
-                      photo: ""
-                      photoComment: ""
-                  confirmationBlock:
-                    question1: Confirm I have discussed all of the above with the customer
-                    answer1: ""
-                    question2: Is the customer proceeding with the quote
-                    answer2: ""
-                    question3: Does the customer wish to waiver the 14 day cooling off
-                    answer3: ""
-                    customersName: ""
-                    customerSignature: ""
-                - bookingDate: "14/01/2020"
-                  bookingTime: "11.30" 
-                  bookingNumber: 1234
-                  salesPersonCode: S456
-                  storeName: Leamington
-                  customerNo: C12345678
-                  name: John Smith
-                  fullAddress: "10 Leam Terrace, Leamington Spa, Warwickshire, CV31 1DE"
-                  phoneNo: "01926 465 123"
-                  mobile: "07437 477576"
-                  comment: 
-                  status:
-                  detailsPdf:
-                  questions:
-                    - question: Discussed uplift and disposal
-                      answer: ""
-                      comments: ""
-                    - question: Explained about furnture moving
-                      answer: ""
-                      comments: ""
-                    - question: identify and note if using own underlay/accessories
-                      answer: ""
-                      comments: ""
-                    - question: Explained Joins
-                      answer: ""
-                      comments: ""
-                    - question: Explained pile directions of different areas
-                      comments: ""
-                    - question: Confirm range/colour for each area
-                      answer: ""
-                      comments: ""
-                    - question: Explained the delivery and acre package
-                      answer: ""
-                      comments: ""
-                    - question: Discussed the effects of sunlight to certain areas
-                      answer: ""
-                      comments: ""
-                    - question: Checked the floor temperature
-                      answer: ""
-                      comments: ""
-                  images:
-                    - photoId: 1
-                      photo: ""
-                      photoComment: ""
-                    - photoId: 2
-                      photo: ""
-                      photoComment: ""
-                    - photoId: 3
-                      photo: ""
-                      photoComment: ""
-                    - photoId: 4
-                      photo: ""
-                      photoComment: ""
-                    - photoId: 5
-                      photo: ""
-                      photoComment: ""
-                  confirmationBlock:
-                    question1: Confirm I have discussed all of the above with the customer
-                    answer1: ""
-                    question2: Is the customer proceeding with the quote
-                    answer2: ""
-                    question3: Does the customer wish to waiver the 14 day cooling off
-                    answer3: ""
-                    customersName: ""
-                    customerSignature: ""
-
+                    - photo:  ""
+                      dateTime: ""
+                  videos:
+                    - video:  ""
+                      dateTime: ""
 
         default:
           description: server error
