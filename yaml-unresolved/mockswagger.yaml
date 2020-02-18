@@ -76,7 +76,7 @@ paths:
               tasks:
                 - taskId: "R1-1"
                   taskDescription: "Require evacuation of all people from the building" 
-                  taskStatus: "Not Started"
+                  taskStatus: "Started"
                   notes:
                     - note: "some notes" 
                       dateTime: "2020-02-17T14:50:34Z"
