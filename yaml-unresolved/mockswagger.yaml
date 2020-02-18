@@ -85,6 +85,12 @@ paths:
                   images:
                     - photo:  "http://www.theplymouthbrethren.org.uk/wp-content/uploads/2016/04/Stafford-1.jpg"
                       dateTime: "2020-02-17T14:50:34Z"
+                    - photo:  "http://www.theplymouthbrethren.org.uk/wp-content/uploads/2016/04/Stafford-2.jpg"
+                      dateTime: "2020-02-17T14:50:34Z"
+                    - photo:  "http://www.theplymouthbrethren.org.uk/wp-content/uploads/2016/04/Stafford-3.jpg"
+                      dateTime: "2020-02-17T14:50:34Z"
+                    - photo:  "http://www.theplymouthbrethren.org.uk/wp-content/uploads/2016/04/Stafford-4.jpg"
+                      dateTime: "2020-02-17T14:50:34Z"
                   videos:
                     - video:  ""
                       dateTime: ""
