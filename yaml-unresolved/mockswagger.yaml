@@ -102,8 +102,12 @@ paths:
                     - note: "some notes" 
                       dateTime: ""
                   images:
-                    - photo:  ""
-                      dateTime: ""
+                    - photo:  "http://theplymouthbrethren.org.uk/wp-content/uploads/2017/01/Norfolk-Timber-Fire-RRT-Kings-Lynn-21012017016-Firefighter-keeping-watch3.jpg"
+                      dateTime: "2020-02-17T14:50:34Z"
+                    - photo:  "http://theplymouthbrethren.org.uk/wp-content/uploads/2017/01/Norfolk-Timber-Fire-RRT-Kings-Lynn-21012017016-Firefighter-keeping-watch2.jpg"
+                      dateTime: "2020-02-17T14:50:34Z"
+                    - photo:  "http://theplymouthbrethren.org.uk/wp-content/uploads/2017/01/Norfolk-Timber-Fire-RRT-Kings-Lynn-21012017016-Firefighter-keeping-watch1.jpg"
+                      dateTime: "2020-02-17T14:50:34Z"
                   videos:
                     - video:  ""
                       dateTime: ""
