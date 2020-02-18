@@ -79,7 +79,9 @@ paths:
                   taskStatus: "Not Started"
                   notes:
                     - note: "some notes" 
-                      dateTime: ""
+                      dateTime: "2020-02-17T14:50:34Z"
+                    - note: "some more notes" 
+                      dateTime: ""  
                   images:
                     - photo:  ""
                       dateTime: ""
@@ -1170,5 +1172,9 @@ paths:
               expiry:
                 type: string
                 example: 4097174399
+              username:
+                type: string
+                example: "Julian Parsons"
+                
         default:
           description: server error
