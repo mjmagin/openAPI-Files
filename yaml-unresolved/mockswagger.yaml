@@ -987,7 +987,45 @@ paths:
         default:
           description: server error
   
- 
+  /graphdemo:
+    get:
+      summary: graph demo
+      description: graph demo
+      tags:
+        - General
+      produces:
+      - application/json
+      parameters:
+      - in: query
+        name: token
+        type: string
+        description: token
+        required: false
+     
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                stocktype:
+                  type: string
+                stockqty:
+                  type: integer
+
+            example:
+              - stocktype: Unrestricted
+                stockqty: 245
+              - stocktype: Blocked
+                stockqty: 24
+              - stocktype: QA
+                stockqty: 56
+              - stocktype: Damaged
+                stockqty: 32
+
+  
   /salutations:
     get:
       summary: salutations
