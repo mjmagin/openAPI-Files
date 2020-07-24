@@ -4,7 +4,8 @@ const { parse, convert } = require('odata2openapi');
 const xml = '';
 
 const options = {
-  host: 'https://orgf3cfd067.crm11.dynamics.com/api/data/v9.0/$metadata'
+  host: 'https://sapes5.sapdevcenter.com',
+  path: '/sap/opu/odata/IWBEP/GWSAMPLE_BASIC'
 };
 
 parse(xml)

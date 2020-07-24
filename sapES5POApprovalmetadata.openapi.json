@@ -1,0 +1,981 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "OData Service for namespace SEPMRA_PO_APV",
+        "version": "",
+        "description": "This OData service is located at [http://localhost/service-root/](http://localhost/service-root/)\n\n## Entity Data Model\n![ER Diagram](https://yuml.me/diagram/class/[PurchaseOrder{bg:orange}],[PurchaseOrder]-*>[PurchaseOrderItem],[PurchaseOrderItem{bg:orange}],[BudgetReductionResult],[FunctionImportResult])"
+    },
+    "schemes": [
+        "http"
+    ],
+    "host": "localhost",
+    "basePath": "/service-root",
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "tags": [
+        {
+            "name": "PurchaseOrders"
+        },
+        {
+            "name": "PurchaseOrderItems"
+        }
+    ],
+    "paths": {
+        "/PurchaseOrders": {
+            "get": {
+                "summary": "Get entities from PurchaseOrders",
+                "tags": [
+                    "PurchaseOrders"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/top"
+                    },
+                    {
+                        "$ref": "#/parameters/skip"
+                    },
+                    {
+                        "$ref": "#/parameters/search"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "ChangedAt",
+                                "ChangedAt desc",
+                                "CurrencyCode",
+                                "CurrencyCode desc",
+                                "DeliveryAddress",
+                                "DeliveryAddress desc",
+                                "DeliveryDateEarliest",
+                                "DeliveryDateEarliest desc",
+                                "GrossAmount",
+                                "GrossAmount desc",
+                                "ItemCount",
+                                "ItemCount desc",
+                                "LaterDelivDateExist",
+                                "LaterDelivDateExist desc",
+                                "OrderedByName",
+                                "OrderedByName desc",
+                                "POId",
+                                "POId desc",
+                                "SupplierName",
+                                "SupplierName desc"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "ChangedAt",
+                                "ProductId",
+                                "CurrencyCode",
+                                "DeliveryAddress",
+                                "DeliveryDateEarliest",
+                                "GrossAmount",
+                                "ItemCount",
+                                "LaterDelivDateExist",
+                                "OrderedByName",
+                                "POId",
+                                "SupplierName",
+                                "PurchaseOrderItems"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "description": "Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "PurchaseOrderItems"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "schema": {
+                            "title": "Wrapper",
+                            "type": "object",
+                            "properties": {
+                                "d": {
+                                    "title": "Collection of PurchaseOrder",
+                                    "type": "object",
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/SEPMRA_PO_APV.PurchaseOrder"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/responses/error"
+                    }
+                }
+            }
+        },
+        "/PurchaseOrders('{POId}')": {
+            "get": {
+                "summary": "Get entity from PurchaseOrders by key",
+                "tags": [
+                    "PurchaseOrders"
+                ],
+                "parameters": [
+                    {
+                        "name": "POId",
+                        "in": "path",
+                        "required": true,
+                        "description": "Purchase Order ID",
+                        "type": "string"
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "ChangedAt",
+                                "ProductId",
+                                "CurrencyCode",
+                                "DeliveryAddress",
+                                "DeliveryDateEarliest",
+                                "GrossAmount",
+                                "ItemCount",
+                                "LaterDelivDateExist",
+                                "OrderedByName",
+                                "POId",
+                                "SupplierName",
+                                "PurchaseOrderItems"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "$expand",
+                        "in": "query",
+                        "description": "Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "PurchaseOrderItems"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "schema": {
+                            "title": "PurchaseOrder",
+                            "type": "object",
+                            "properties": {
+                                "d": {
+                                    "$ref": "#/definitions/SEPMRA_PO_APV.PurchaseOrder"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/responses/error"
+                    }
+                }
+            }
+        },
+        "/PurchaseOrders('{POId}')/PurchaseOrderItems": {
+            "get": {
+                "summary": "Get related PurchaseOrderItems",
+                "tags": [
+                    "PurchaseOrders",
+                    "PurchaseOrderItems"
+                ],
+                "parameters": [
+                    {
+                        "name": "POId",
+                        "in": "path",
+                        "required": true,
+                        "description": "Purchase Order ID",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/top"
+                    },
+                    {
+                        "$ref": "#/parameters/skip"
+                    },
+                    {
+                        "$ref": "#/parameters/search"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "DeliveryDate",
+                                "DeliveryDate desc",
+                                "GrossAmount",
+                                "GrossAmount desc",
+                                "GrossAmountCurrency",
+                                "GrossAmountCurrency desc",
+                                "POId",
+                                "POId desc",
+                                "POItemPos",
+                                "POItemPos desc",
+                                "Price",
+                                "Price desc",
+                                "PriceCurrency",
+                                "PriceCurrency desc",
+                                "Product",
+                                "Product desc",
+                                "Quantity",
+                                "Quantity desc",
+                                "QuantityUnit",
+                                "QuantityUnit desc"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "DeliveryDate",
+                                "GrossAmount",
+                                "GrossAmountCurrency",
+                                "POId",
+                                "POItemPos",
+                                "Price",
+                                "PriceCurrency",
+                                "Product",
+                                "Quantity",
+                                "QuantityUnit"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "schema": {
+                            "title": "Wrapper",
+                            "type": "object",
+                            "properties": {
+                                "d": {
+                                    "title": "Collection of PurchaseOrderItem",
+                                    "type": "object",
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/SEPMRA_PO_APV.PurchaseOrderItem"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/responses/error"
+                    }
+                }
+            }
+        },
+        "/PurchaseOrderItems": {
+            "get": {
+                "summary": "Get entities from PurchaseOrderItems",
+                "tags": [
+                    "PurchaseOrderItems"
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/top"
+                    },
+                    {
+                        "$ref": "#/parameters/skip"
+                    },
+                    {
+                        "$ref": "#/parameters/search"
+                    },
+                    {
+                        "name": "$filter",
+                        "in": "query",
+                        "description": "Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+                        "type": "string"
+                    },
+                    {
+                        "$ref": "#/parameters/count"
+                    },
+                    {
+                        "name": "$orderby",
+                        "in": "query",
+                        "description": "Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "DeliveryDate",
+                                "DeliveryDate desc",
+                                "GrossAmount",
+                                "GrossAmount desc",
+                                "GrossAmountCurrency",
+                                "GrossAmountCurrency desc",
+                                "POId",
+                                "POId desc",
+                                "POItemPos",
+                                "POItemPos desc",
+                                "Price",
+                                "Price desc",
+                                "PriceCurrency",
+                                "PriceCurrency desc",
+                                "Product",
+                                "Product desc",
+                                "Quantity",
+                                "Quantity desc",
+                                "QuantityUnit",
+                                "QuantityUnit desc"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "DeliveryDate",
+                                "GrossAmount",
+                                "GrossAmountCurrency",
+                                "POId",
+                                "POItemPos",
+                                "Price",
+                                "PriceCurrency",
+                                "Product",
+                                "Quantity",
+                                "QuantityUnit"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entities",
+                        "schema": {
+                            "title": "Wrapper",
+                            "type": "object",
+                            "properties": {
+                                "d": {
+                                    "title": "Collection of PurchaseOrderItem",
+                                    "type": "object",
+                                    "properties": {
+                                        "results": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/definitions/SEPMRA_PO_APV.PurchaseOrderItem"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/responses/error"
+                    }
+                }
+            }
+        },
+        "/PurchaseOrderItems(POId='{POId}',POItemPos='{POItemPos}')": {
+            "get": {
+                "summary": "Get entity from PurchaseOrderItems by key",
+                "tags": [
+                    "PurchaseOrderItems"
+                ],
+                "parameters": [
+                    {
+                        "name": "POId",
+                        "in": "path",
+                        "required": true,
+                        "description": "Purchase Order ID",
+                        "type": "string"
+                    },
+                    {
+                        "name": "POItemPos",
+                        "in": "path",
+                        "required": true,
+                        "description": "Item Position",
+                        "type": "string"
+                    },
+                    {
+                        "name": "$select",
+                        "in": "query",
+                        "description": "Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+                        "type": "array",
+                        "uniqueItems": true,
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "DeliveryDate",
+                                "GrossAmount",
+                                "GrossAmountCurrency",
+                                "POId",
+                                "POItemPos",
+                                "Price",
+                                "PriceCurrency",
+                                "Product",
+                                "Quantity",
+                                "QuantityUnit"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieved entity",
+                        "schema": {
+                            "title": "PurchaseOrderItem",
+                            "type": "object",
+                            "properties": {
+                                "d": {
+                                    "$ref": "#/definitions/SEPMRA_PO_APV.PurchaseOrderItem"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/responses/error"
+                    }
+                }
+            }
+        },
+        "/ApprovePurchaseOrder": {
+            "post": {
+                "summary": "Approve Purchase Order with optional note",
+                "description": "Approve Purchase Order with optional note",
+                "tags": [
+                    "Service Operations"
+                ],
+                "parameters": [
+                    {
+                        "name": "POId",
+                        "in": "query",
+                        "required": true,
+                        "description": "Value needs to be enclosed in single quotes",
+                        "type": "string",
+                        "maxLength": 12,
+                        "pattern": "^'[^']*(''[^']*)*'$"
+                    },
+                    {
+                        "name": "Note",
+                        "in": "query",
+                        "required": true,
+                        "description": "Value needs to be enclosed in single quotes",
+                        "type": "string",
+                        "maxLength": 257,
+                        "pattern": "^'[^']*(''[^']*)*'$"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "FunctionImportResult",
+                            "type": "object",
+                            "properties": {
+                                "d": {
+                                    "$ref": "#/definitions/SEPMRA_PO_APV.FunctionImportResult"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/responses/error"
+                    }
+                }
+            }
+        },
+        "/RejectPurchaseOrder": {
+            "post": {
+                "summary": "Reject Purchase Order with optional note",
+                "description": "Reject Purchase Order with optional note",
+                "tags": [
+                    "Service Operations"
+                ],
+                "parameters": [
+                    {
+                        "name": "POId",
+                        "in": "query",
+                        "required": true,
+                        "description": "Value needs to be enclosed in single quotes",
+                        "type": "string",
+                        "maxLength": 12,
+                        "pattern": "^'[^']*(''[^']*)*'$"
+                    },
+                    {
+                        "name": "Note",
+                        "in": "query",
+                        "required": true,
+                        "description": "Value needs to be enclosed in single quotes",
+                        "type": "string",
+                        "maxLength": 257,
+                        "pattern": "^'[^']*(''[^']*)*'$"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "FunctionImportResult",
+                            "type": "object",
+                            "properties": {
+                                "d": {
+                                    "$ref": "#/definitions/SEPMRA_PO_APV.FunctionImportResult"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/responses/error"
+                    }
+                }
+            }
+        },
+        "/SimulateBudgetReduction": {
+            "post": {
+                "summary": "Calculate the budget reduction caused by a list of POs",
+                "description": "Calculate the budget reduction caused by a list of POs",
+                "tags": [
+                    "Service Operations"
+                ],
+                "parameters": [
+                    {
+                        "name": "POIds",
+                        "in": "query",
+                        "required": true,
+                        "description": "Value needs to be enclosed in single quotes",
+                        "type": "string",
+                        "pattern": "^'[^']*(''[^']*)*'$"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "title": "BudgetReductionResult",
+                            "type": "object",
+                            "properties": {
+                                "d": {
+                                    "$ref": "#/definitions/SEPMRA_PO_APV.BudgetReductionResult"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "$ref": "#/responses/error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "SEPMRA_PO_APV.PurchaseOrder": {
+            "type": "object",
+            "properties": {
+                "ChangedAt": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "example": "/Date(1492098664000)/",
+                    "title": "Last Changed",
+                    "description": "Last Changed"
+                },
+                "ProductId": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "title": "Product",
+                    "description": "Product"
+                },
+                "CurrencyCode": {
+                    "type": "string",
+                    "maxLength": 5,
+                    "title": "Currency Code",
+                    "description": "Currency Code"
+                },
+                "DeliveryAddress": {
+                    "type": "string",
+                    "maxLength": 129,
+                    "title": "Delivery Address",
+                    "description": "Delivery Address"
+                },
+                "DeliveryDateEarliest": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "example": "/Date(1492098664000)/",
+                    "title": "Delivery Date",
+                    "description": "Delivery Date"
+                },
+                "GrossAmount": {
+                    "type": "string",
+                    "format": "decimal",
+                    "multipleOf": 0.01,
+                    "minimum": -9999999999999.99,
+                    "maximum": 9999999999999.99,
+                    "example": "0",
+                    "title": "Gross Amount",
+                    "description": "Gross Amount"
+                },
+                "ItemCount": {
+                    "type": "integer",
+                    "format": "int32",
+                    "title": "Item Count",
+                    "description": "Item Count"
+                },
+                "LaterDelivDateExist": {
+                    "type": "boolean",
+                    "title": "Later Delivery Date",
+                    "description": "Later Delivery Date"
+                },
+                "OrderedByName": {
+                    "type": "string",
+                    "maxLength": 81,
+                    "title": "Ordered By",
+                    "description": "Ordered By"
+                },
+                "POId": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "title": "Purchase Order ID",
+                    "description": "Purchase Order ID"
+                },
+                "SupplierName": {
+                    "type": "string",
+                    "maxLength": 80,
+                    "title": "Supplier",
+                    "description": "Supplier"
+                },
+                "PurchaseOrderItems": {
+                    "type": "object",
+                    "properties": {
+                        "results": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SEPMRA_PO_APV.PurchaseOrderItem"
+                            }
+                        }
+                    }
+                }
+            },
+            "title": "PurchaseOrder"
+        },
+        "SEPMRA_PO_APV.PurchaseOrder-create": {
+            "type": "object",
+            "properties": {
+                "PurchaseOrderItems": {
+                    "type": "object",
+                    "properties": {
+                        "results": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SEPMRA_PO_APV.PurchaseOrderItem-create"
+                            }
+                        }
+                    }
+                }
+            },
+            "title": "PurchaseOrder (for create)"
+        },
+        "SEPMRA_PO_APV.PurchaseOrder-update": {
+            "type": "object",
+            "title": "PurchaseOrder (for update)"
+        },
+        "SEPMRA_PO_APV.PurchaseOrderItem": {
+            "type": "object",
+            "properties": {
+                "DeliveryDate": {
+                    "type": "string",
+                    "example": "/Date(1492098664000)/",
+                    "title": "Delivery Time",
+                    "description": "Delivery Time"
+                },
+                "GrossAmount": {
+                    "type": "string",
+                    "format": "decimal",
+                    "multipleOf": 0.001,
+                    "example": "0",
+                    "title": "Gross Amount",
+                    "description": "Gross Amount"
+                },
+                "GrossAmountCurrency": {
+                    "type": "string",
+                    "maxLength": 5,
+                    "title": "Currency Code",
+                    "description": "Currency Code"
+                },
+                "POId": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "title": "Purchase Order ID",
+                    "description": "Purchase Order ID"
+                },
+                "POItemPos": {
+                    "type": "string",
+                    "maxLength": 10,
+                    "title": "Item Position",
+                    "description": "Item Position"
+                },
+                "Price": {
+                    "type": "string",
+                    "format": "decimal",
+                    "multipleOf": 0.01,
+                    "minimum": -9999999999999.99,
+                    "maximum": 9999999999999.99,
+                    "example": "0",
+                    "title": "Price",
+                    "description": "Price"
+                },
+                "PriceCurrency": {
+                    "type": "string",
+                    "maxLength": 5,
+                    "title": "Currency Code",
+                    "description": "Currency Code"
+                },
+                "Product": {
+                    "type": "string",
+                    "maxLength": 255,
+                    "title": "Product",
+                    "description": "Product"
+                },
+                "Quantity": {
+                    "type": "integer",
+                    "format": "int32",
+                    "title": "Quantity",
+                    "description": "Quantity"
+                },
+                "QuantityUnit": {
+                    "type": "string",
+                    "maxLength": 3,
+                    "title": "Unit of Measure",
+                    "description": "Unit of Measure"
+                }
+            },
+            "title": "PurchaseOrderItem"
+        },
+        "SEPMRA_PO_APV.PurchaseOrderItem-create": {
+            "type": "object",
+            "title": "PurchaseOrderItem (for create)"
+        },
+        "SEPMRA_PO_APV.PurchaseOrderItem-update": {
+            "type": "object",
+            "title": "PurchaseOrderItem (for update)"
+        },
+        "SEPMRA_PO_APV.BudgetReductionResult": {
+            "type": "object",
+            "properties": {
+                "OverallBudget": {
+                    "type": "string",
+                    "format": "decimal",
+                    "multipleOf": 0.01,
+                    "example": "0",
+                    "title": "Overall Budget",
+                    "description": "Overall Budget"
+                },
+                "RemainingBudget": {
+                    "type": "string",
+                    "format": "decimal",
+                    "multipleOf": 0.01,
+                    "example": "0",
+                    "title": "Remaining Budget",
+                    "description": "Remaining Budget"
+                },
+                "TotalApprovedAmount": {
+                    "type": "string",
+                    "format": "decimal",
+                    "multipleOf": 0.01,
+                    "example": "0",
+                    "title": "Total Approved PO Amount",
+                    "description": "Total Approved PO Amount"
+                },
+                "Currency": {
+                    "type": "string",
+                    "maxLength": 5,
+                    "title": "Currency",
+                    "description": "Currency"
+                }
+            },
+            "title": "BudgetReductionResult"
+        },
+        "SEPMRA_PO_APV.BudgetReductionResult-create": {
+            "type": "object",
+            "title": "BudgetReductionResult (for create)"
+        },
+        "SEPMRA_PO_APV.BudgetReductionResult-update": {
+            "type": "object",
+            "title": "BudgetReductionResult (for update)"
+        },
+        "SEPMRA_PO_APV.FunctionImportResult": {
+            "type": "object",
+            "properties": {
+                "Success": {
+                    "type": "boolean",
+                    "title": "Boolean Variable (X=true, -=false, space=unknown)",
+                    "description": "Boolean Variable (X=true, -=false, space=unknown)"
+                }
+            },
+            "title": "FunctionImportResult"
+        },
+        "SEPMRA_PO_APV.FunctionImportResult-create": {
+            "type": "object",
+            "title": "FunctionImportResult (for create)"
+        },
+        "SEPMRA_PO_APV.FunctionImportResult-update": {
+            "type": "object",
+            "title": "FunctionImportResult (for update)"
+        },
+        "odata.error": {
+            "type": "object",
+            "required": [
+                "error"
+            ],
+            "properties": {
+                "error": {
+                    "$ref": "#/definitions/odata.error.main"
+                }
+            }
+        },
+        "odata.error.main": {
+            "type": "object",
+            "required": [
+                "code",
+                "message"
+            ],
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "message": {
+                    "$ref": "#/definitions/odata.error.message"
+                },
+                "innererror": {
+                    "type": "object",
+                    "description": "The structure of this object is service-specific"
+                }
+            }
+        },
+        "odata.error.message": {
+            "type": "object",
+            "required": [
+                "lang",
+                "value"
+            ],
+            "properties": {
+                "lang": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "parameters": {
+        "top": {
+            "name": "$top",
+            "in": "query",
+            "description": "Show only the first n items, see [OData Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "type": "integer",
+            "minimum": 0
+        },
+        "skip": {
+            "name": "$skip",
+            "in": "query",
+            "description": "Skip the first n items, see [OData Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "type": "integer",
+            "minimum": 0
+        },
+        "count": {
+            "name": "$inlinecount",
+            "in": "query",
+            "description": "Include count of items, see [OData Count](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#InlinecountSystemQueryOption)",
+            "type": "string",
+            "enum": [
+                "allpages",
+                "none"
+            ]
+        },
+        "search": {
+            "name": "search",
+            "in": "query",
+            "description": "Search items by search phrases, see [OData Searching](https://wiki.scn.sap.com/wiki/display/EmTech/SAP+Annotations+for+OData+Version+2.0#SAPAnnotationsforODataVersion2.0-Query_Option_searchQueryOptionsearch)",
+            "type": "string"
+        }
+    },
+    "responses": {
+        "error": {
+            "description": "Error",
+            "schema": {
+                "$ref": "#/definitions/odata.error"
+            }
+        }
+    }
+}
