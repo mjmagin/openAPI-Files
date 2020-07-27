@@ -4,7 +4,7 @@ const { parse, convert } = require('odata2openapi');
 const xml = '';
 
 const options = {
-  host: 'https://orgf3cfd067.crm11.dynamics.com/api/data/v9.0/$metadata'
+  host: 'https://orgf3cfd067.crm11.dynamics.com/api/data/v9.1'
 };
 
 parse(xml)
